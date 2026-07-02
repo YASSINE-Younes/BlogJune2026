@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ThemeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+ 
+Route::view('/x', 'theme.master');
+Route::view('/index', 'theme.index');
+
+Route::controller(ThemeController::class)->name('theme.')->group(function()
+{
+Route::get('/' , 'index')->name('index');
+Route::get('/category' , 'category')->name('category');
+Route::get('/contact' , 'contact')->name('contact');
 });
+
+
+
+
+ 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,3 +43,6 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+
