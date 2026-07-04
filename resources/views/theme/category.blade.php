@@ -1,11 +1,23 @@
 @extends('theme.master')
 
 
-@section('title' ,'Category')
+@section('title', 'Category')
 
-@section('active-Category', 'active')
+@section('active-categories', 'active')
+
+
 
 @section('content')
+
+
+
+    <!--================ Hero sm Banner start =================-->
+     @include('theme.partials.hero' , ['title'=>'Category'])
+
+    <!--================ Hero sm Banner end =================-->
+
+
+
     <!--================ Start Blog Post Area =================-->
     <section class="blog-post-area section-margin">
         <div class="container">
@@ -186,6 +198,7 @@
 
 
 
+                    <!--  Start Pagination -->
                     <div class="row">
                         <div class="col-lg-12">
                             <nav class="blog-pagination justify-content-center d-flex">
@@ -210,12 +223,14 @@
                             </nav>
                         </div>
                     </div>
+                    <!--  End Pagination -->
                 </div>
 
                 <!-- Start Blog Post Siddebar -->
                 @include('theme.partials.sidebar')
                 <!-- End Blog Post Siddebar -->
             </div>
+        </div>
     </section>
     <!--================ End Blog Post Area =================-->
 @endsection
