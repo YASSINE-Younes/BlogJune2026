@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use app\Models\Category;
 use Illuminate\Http\Request;
 
 class ThemeController extends Controller
@@ -33,17 +34,8 @@ class ThemeController extends Controller
         return view('theme.single-blog');
     }
 
-    // Function Appel Page LOGIN
-      public function login ()
-    {
-        return view('theme.login');
-    }
+  
 
-
-    // Function Appel Page REGISTER
-      public function register ()
-    {
-        return view('theme.register');
-    }
+     
 
 }
